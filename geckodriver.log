@@ -1,0 +1,370 @@
+1632053331714	geckodriver	INFO	Listening on 127.0.0.1:63366
+1632053334689	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-no-remote" "-profile" "C:\\Users\\vayushi\\AppData\\Local\\Temp\\rust_mozprofileB9EZOr"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/TelemetryUtils.jsm, line 167: TypeError: date is undefined
+1632053339976	Marionette	INFO	Listening on port 63375
+1632053340253	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: , line 0: NotAllowedError: The request is not allowed by the user agent or the platform in the current context, possibly because the user denied permission.
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x5A000D,name=PHttpChannel::Msg_DeletingChannel) Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x5A000D,name=PHttpChannel::Msg_DeletingChannel) Channel closing: too late to send/recv, messages will be lost
+
+1632053406685	Marionette	INFO	Stopped listening on port 63375
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1632053499564	geckodriver	INFO	Listening on 127.0.0.1:57474
+1632053502535	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-no-remote" "-profile" "C:\\Users\\vayushi\\AppData\\Local\\Temp\\rust_mozprofileYyHm1h"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/TelemetryUtils.jsm, line 167: TypeError: date is undefined
+1632053506224	Marionette	INFO	Listening on port 57484
+1632053506651	Marionette	WARN	TLS certificate errors will be ignored for this session
+1632053544098	Marionette	INFO	Stopped listening on port 57484
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1632053568687	geckodriver	INFO	Listening on 127.0.0.1:57533
+1632053571650	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-no-remote" "-profile" "C:\\Users\\vayushi\\AppData\\Local\\Temp\\rust_mozprofilexYwXtR"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/TelemetryUtils.jsm, line 167: TypeError: date is undefined
+1632053575517	Marionette	INFO	Listening on port 57541
+1632053575778	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: , line 0: NotAllowedError: The request is not allowed by the user agent or the platform in the current context, possibly because the user denied permission.
+1632053758331	Marionette	INFO	Stopped listening on port 57541
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1632053776880	geckodriver	INFO	Listening on 127.0.0.1:57651
+1632053779845	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-no-remote" "-profile" "C:\\Users\\vayushi\\AppData\\Local\\Temp\\rust_mozprofile9BEoZr"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/TelemetryUtils.jsm, line 167: TypeError: date is undefined
+1632053783577	Marionette	INFO	Listening on port 57661
+1632053783963	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: , line 0: NotAllowedError: The request is not allowed by the user agent or the platform in the current context, possibly because the user denied permission.
+console.error: "Store does not have a valid reducer. Make sure the argument passed to combineReducers is an object whose values are reducers."
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+1632054531534	Marionette	INFO	Stopped listening on port 57661
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1632054537159	geckodriver	INFO	Listening on 127.0.0.1:60099
+1632054540127	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-no-remote" "-profile" "C:\\Users\\vayushi\\AppData\\Local\\Temp\\rust_mozprofilewPA6ha"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/TelemetryUtils.jsm, line 167: TypeError: date is undefined
+1632054544776	Marionette	INFO	Listening on port 55003
+1632054544863	Marionette	WARN	TLS certificate errors will be ignored for this session
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://selection.amazon.com"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://selection.amazon.com"
+console.error: "Store does not have a valid reducer. Make sure the argument passed to combineReducers is an object whose values are reducers."
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+1632054798914	Marionette	INFO	Stopped listening on port 55003
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1632054804592	geckodriver	INFO	Listening on 127.0.0.1:56361
+1632054807552	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-no-remote" "-profile" "C:\\Users\\vayushi\\AppData\\Local\\Temp\\rust_mozprofileN3Brbp"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/TelemetryUtils.jsm, line 167: TypeError: date is undefined
+1632054811371	Marionette	INFO	Listening on port 56373
+1632054811684	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: , line 0: NotAllowedError: The request is not allowed by the user agent or the platform in the current context, possibly because the user denied permission.
+1632055089876	Marionette	INFO	Stopped listening on port 56373
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+ozprofileaT0LsJ"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/TelemetryUtils.jsm, line 167: TypeError: date is undefined
+1632054952520	Marionette	INFO	Listening on port 56461
+1632054952754	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: , line 0: NotAllowedError: The request is not allowed by the user agent or the platform in the current context, possibly because the user denied permission.
+1632055095093	Marionette	INFO	Stopped listening on port 56461
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1632055257254	geckodriver	INFO	Listening on 127.0.0.1:56622
+1632055260226	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-no-remote" "-profile" "C:\\Users\\vayushi\\AppData\\Local\\Temp\\rust_mozprofileqwSIqj"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/TelemetryUtils.jsm, line 167: TypeError: date is undefined
+1632055264066	Marionette	INFO	Listening on port 56633
+1632055264346	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: , line 0: NotAllowedError: The request is not allowed by the user agent or the platform in the current context, possibly because the user denied permission.
+1632055967930	Marionette	INFO	Stopped listening on port 56633
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+firefox.exe" "--marionette" "-no-remote" "-profile" "C:\\Users\\vayushi\\AppData\\Local\\Temp\\rust_mozprofileqGueVo"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/TelemetryUtils.jsm, line 167: TypeError: date is undefined
+1632055486270	Marionette	INFO	Listening on port 59210
+1632055486343	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: , line 0: NotAllowedError: The request is not allowed by the user agent or the platform in the current context, possibly because the user denied permission.
+console.error: "Store does not have a valid reducer. Make sure the argument passed to combineReducers is an object whose values are reducers."
+console.error: "Store does not have a valid reducer. Make sure the argument passed to combineReducers is an object whose values are reducers."
+console.error: "Store does not have a valid reducer. Make sure the argument passed to combineReducers is an object whose values are reducers."
+IPDL protocol error: Handler returned error code!
+
+###!!! 1632056843723	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-no-remote" "-profile" "C:\\Users\\vayushi\\AppData\\Local\\Temp\\rust_mozprofileXIuHtB"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/TelemetryUtils.jsm, line 167: TypeError: date is undefined
+1632056847764	Marionette	INFO	Listening on port 55974
+1632056847852	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: , line 0: NotAllowedError: The request is not allowed by the user agent or the platform in the current context, possibly because the user denied permission.
+JavaScript error: https://selection.amazon.com/vendor.fb38c856767496e48b60.js, line 2: uncaught exception: SyntaxError: JSON.parse: unexpected end of data at line 1 column 1 of the JSON data,SyntaxError: JSON.parse: unexpected end of data at line 1 column 1 of the JSON data,SyntaxError: JSON.parse: unexpected end of data at line 1 column 1 of the JSON data
+console.error: "Store does not have a valid reducer. Make sure the argument passed to combineReducers is an object whose values are reducers."
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+1632057242185	Marionette	INFO	Stopped listening on port 55974
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1632057252316	geckodriver	INFO	Listening on 127.0.0.1:56148
+1632057255252	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-no-remote" "-profile" "C:\\Users\\vayushi\\AppData\\Local\\Temp\\rust_mozprofileg03GcD"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/TelemetryUtils.jsm, line 167: TypeError: date is undefined
+1632057260360	Marionette	INFO	Listening on port 56160
+1632057260590	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: , line 0: NotAllowedError: The request is not allowed by the user agent or the platform in the current context, possibly because the user denied permission.
+console.error: "Store does not have a valid reducer. Make sure the argument passed to combineReducers is an object whose values are reducers."
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1632057520964	Marionette	INFO	Stopped listening on port 56160
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1632057666055	geckodriver	INFO	Listening on 127.0.0.1:64179
+1632057669041	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-no-remote" "-profile" "C:\\Users\\vayushi\\AppData\\Local\\Temp\\rust_mozprofileGEm6YF"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/TelemetryUtils.jsm, line 167: TypeError: date is undefined
+1632057673633	Marionette	INFO	Listening on port 64187
+1632057673783	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: , line 0: NotAllowedError: The request is not allowed by the user agent or the platform in the current context, possibly because the user denied permission.
+1632058269981	Marionette	INFO	Stopped listening on port 64187
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1632058277076	geckodriver	INFO	Listening on 127.0.0.1:53430
+1632058279984	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-no-remote" "-profile" "C:\\Users\\vayushi\\AppData\\Local\\Temp\\rust_mozprofileph7lHK"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/TelemetryUtils.jsm, line 167: TypeError: date is undefined
+1632058286952	Marionette	INFO	Listening on port 53438
+1632058287406	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: , line 0: NotAllowedError: The request is not allowed by the user agent or the platform in the current context, possibly because the user denied permission.
+1632058481845	Marionette	INFO	Stopped listening on port 53438
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1632058487743	geckodriver	INFO	Listening on 127.0.0.1:53548
+1632058490722	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-no-remote" "-profile" "C:\\Users\\vayushi\\AppData\\Local\\Temp\\rust_mozprofilekmhLf9"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/TelemetryUtils.jsm, line 167: TypeError: date is undefined
+1632058497316	Marionette	INFO	Listening on port 53556
+1632058497622	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: , line 0: NotAllowedError: The request is not allowed by the user agent or the platform in the current context, possibly because the user denied permission.
+JavaScript error: https://selection.amazon.com/vendor.fb38c856767496e48b60.js, line 2: uncaught exception: SyntaxError: JSON.parse: unexpected end of data at line 1 column 1 of the JSON data,SyntaxError: JSON.parse: unexpected end of data at line 1 column 1 of the JSON data,SyntaxError: JSON.parse: unexpected end of data at line 1 column 1 of the JSON data
+JavaScript error: https://selection.amazon.com/vendor.fb38c856767496e48b60.js, line 2: SyntaxError: JSON.parse: unexpected end of data at line 1 column 1 of the JSON data
+JavaScript error: https://selection.amazon.com/vendor.fb38c856767496e48b60.js, line 2: uncaught exception: SyntaxError: JSON.parse: unexpected end of data at line 1 column 1 of the JSON data,SyntaxError: JSON.parse: unexpected end of data at line 1 column 1 of the JSON data,SyntaxError: JSON.parse: unexpected end of data at line 1 column 1 of the JSON data,SyntaxError: JSON.parse: unexpected end of data at line 1 column 1 of the JSON data,SyntaxError: JSON.parse: unexpected end of data at line 1 column 1 of the JSON data
+console.error: "Store does not have a valid reducer. Make sure the argument passed to combineReducers is an object whose values are reducers."
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://selection.amazon.com"
+console.error: (new TypeError("parent is null", "resource://devtools/client/inspector/shared/style-change-tracker.js", 67))
+TypeError: parent is null: canMutationImpactCurrentStyles@resource://devtools/client/inspector/shared/style-change-tracker.js:67:24
+onMutations@resource://devtools/client/inspector/shared/style-change-tracker.js:84:41
+_emit@resource://devtools/shared/event-emitter.js:226:34
+emit@resource://devtools/shared/event-emitter.js:172:18
+emit@resource://devtools/shared/event-emitter.js:324:18
+getMutations@resource://devtools/client/fronts/walker.js:409:10
+
+console.error: (new TypeError("container.node.targetFront is null", "resource://devtools/client/inspector/markup/markup.js", 2245))
+1632059295386	Marionette	INFO	Stopped listening on port 53556
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1632059302916	geckodriver	INFO	Listening on 127.0.0.1:65442
+1632059305889	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-no-remote" "-profile" "C:\\Users\\vayushi\\AppData\\Local\\Temp\\rust_mozprofileHWibXn"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/TelemetryUtils.jsm, line 167: TypeError: date is undefined
+1632059313715	Marionette	INFO	Listening on port 65454
+1632059313749	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: , line 0: NotAllowedError: The request is not allowed by the user agent or the platform in the current context, possibly because the user denied permission.
+1632059529429	Marionette	INFO	Stopped listening on port 65454
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1632059534319	geckodriver	INFO	Listening on 127.0.0.1:49162
+1632059537292	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-no-remote" "-profile" "C:\\Users\\vayushi\\AppData\\Local\\Temp\\rust_mozprofileWq8AJp"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/TelemetryUtils.jsm, line 167: TypeError: date is undefined
+1632059544260	Marionette	INFO	Listening on port 49170
+1632059544648	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: , line 0: NotAllowedError: The request is not allowed by the user agent or the platform in the current context, possibly because the user denied permission.
+JavaScript error: https://selection.amazon.com/vendor.fb38c856767496e48b60.js, line 2: SyntaxError: JSON.parse: unexpected end of data at line 1 column 1 of the JSON data
+JavaScript error: https://selection.amazon.com/vendor.fb38c856767496e48b60.js, line 2: uncaught exception: SyntaxError: JSON.parse: unexpected end of data at line 1 column 1 of the JSON data,SyntaxError: JSON.parse: unexpected end of data at line 1 column 1 of the JSON data,SyntaxError: JSON.parse: unexpected end of data at line 1 column 1 of the JSON data
+JavaScript error: https://selection.amazon.com/vendor.fb38c856767496e48b60.js, line 2: uncaught exception: SyntaxError: JSON.parse: unexpected end of data at line 1 column 1 of the JSON data,SyntaxError: JSON.parse: unexpected end of data at line 1 column 1 of the JSON data,SyntaxError: JSON.parse: unexpected end of data at line 1 column 1 of the JSON data,SyntaxError: JSON.parse: unexpected end of data at line 1 column 1 of the JSON data,SyntaxError: JSON.parse: unexpected end of data at line 1 column 1 of the JSON data
+JavaScript error: https://selection.amazon.com/vendor.fb38c856767496e48b60.js, line 2: uncaught exception: SyntaxError: JSON.parse: unexpected end of data at line 1 column 1 of the JSON data,SyntaxError: JSON.parse: unexpected end of data at line 1 column 1 of the JSON data,SyntaxError: JSON.parse: unexpected end of data at line 1 column 1 of the JSON data
+console.error: "Store does not have a valid reducer. Make sure the argument passed to combineReducers is an object whose values are reducers."
+1632059943121	Marionette	INFO	Stopped listening on port 49170
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1632059950908	geckodriver	INFO	Listening on 127.0.0.1:55256
+1632059953890	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-no-remote" "-profile" "C:\\Users\\vayushi\\AppData\\Local\\Temp\\rust_mozprofilesLRpJq"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/TelemetryUtils.jsm, line 167: TypeError: date is undefined
+1632059960592	Marionette	INFO	Listening on port 55265
+1632059960823	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: , line 0: NotAllowedError: The request is not allowed by the user agent or the platform in the current context, possibly because the user denied permission.
+JavaScript error: https://selection.amazon.com/vendor.fb38c856767496e48b60.js, line 2: SyntaxError: JSON.parse: unexpected end of data at line 1 column 1 of the JSON data
+JavaScript error: https://selection.amazon.com/vendor.fb38c856767496e48b60.js, line 2: uncaught exception: SyntaxError: JSON.parse: unexpected end of data at line 1 column 1 of the JSON data,SyntaxError: JSON.parse: unexpected end of data at line 1 column 1 of the JSON data,SyntaxError: JSON.parse: unexpected end of data at line 1 column 1 of the JSON data
+JavaScript error: https://selection.amazon.com/vendor.fb38c856767496e48b60.js, line 2: uncaught exception: SyntaxError: JSON.parse: unexpected end of data at line 1 column 1 of the JSON data,SyntaxError: JSON.parse: unexpected end of data at line 1 column 1 of the JSON data,SyntaxError: JSON.parse: unexpected end of data at line 1 column 1 of the JSON data
+JavaScript error: https://selection.amazon.com/vendor.fb38c856767496e48b60.js, line 2: uncaught exception: SyntaxError: JSON.parse: unexpected end of data at line 1 column 1 of the JSON data,SyntaxError: JSON.parse: unexpected end of data at line 1 column 1 of the JSON data,SyntaxError: JSON.parse: unexpected end of data at line 1 column 1 of the JSON data,SyntaxError: JSON.parse: unexpected end of data at line 1 column 1 of the JSON data,SyntaxError: JSON.parse: unexpected end of data at line 1 column 1 of the JSON data
+console.error: "Store does not have a valid reducer. Make sure the argument passed to combineReducers is an object whose values are reducers."
+SourceActor threw an exception: [Exception... "Failed to open input source 'file:///'"  nsresult: "0x80004005 (NS_ERROR_FAILURE)"  location: "JS frame :: resource://devtools/shared/DevToolsUtils.js :: mainThreadFetch/< :: line 659"  data: yes]
+Stack: mainThreadFetch/<@resource://devtools/shared/DevToolsUtils.js:659:15
+mainThreadFetch@resource://devtools/shared/DevToolsUtils.js:509:10
+_fetchURLContents@resource://devtools/server/actors/utils/TabSources.js:580:22
+urlContents@resource://devtools/server/actors/utils/TabSources.js:547:17
+_resurrectSource@resource://devtools/server/actors/thread.js:1998:69
+addAllSources@resource://devtools/server/actors/thread.js:1382:14
+onSources@resource://devtools/server/actors/thread.js:1388:10
+onPacket@resource://devtools/server/devtools-server-connection.js:380:58
+receiveMessage@resource://devtools/shared/transport/child-transport.js:66:16
+Line: 659, column: 0
+console.error: ({})
+JavaScript error: resource://devtools/shared/DevToolsUtils.js, line 659: NS_ERROR_FAILURE: Failed to open input source 'file:///'
+JavaScript error: resource://devtools/server/actors/webconsole/utils.js, line 417: SyntaxError: The expression is not a legal expression.
+1632060299870	Marionette	INFO	Stopped listening on port 55265
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1632060353633	geckodriver	INFO	Listening on 127.0.0.1:55450
+1632060356580	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-no-remote" "-profile" "C:\\Users\\vayushi\\AppData\\Local\\Temp\\rust_mozprofileeTD2ka"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/TelemetryUtils.jsm, line 167: TypeError: date is undefined
+1632060363338	Marionette	INFO	Listening on port 55458
+1632060363446	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: , line 0: NotAllowedError: The request is not allowed by the user agent or the platform in the current context, possibly because the user denied permission.
+JavaScript error: https://selection.amazon.com/vendor.fb38c856767496e48b60.js, line 2: uncaught exception: SyntaxError: JSON.parse: unexpected end of data at line 1 column 1 of the JSON data,SyntaxError: JSON.parse: unexpected end of data at line 1 column 1 of the JSON data,SyntaxError: JSON.parse: unexpected end of data at line 1 column 1 of the JSON data,SyntaxError: JSON.parse: unexpected end of data at line 1 column 1 of the JSON data,SyntaxError: JSON.parse: unexpected end of data at line 1 column 1 of the JSON data
+JavaScript error: https://selection.amazon.com/vendor.fb38c856767496e48b60.js, line 2: SyntaxError: JSON.parse: unexpected end of data at line 1 column 1 of the JSON data
+1632060447267	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+TimedPromise/<@chrome://marionette/content/sync.js:245:13
+TimedPromise@chrome://marionette/content/sync.js:230:10
+interaction.flushEventLoop@chrome://marionette/content/interaction.js:416:10
+webdriverClickElement@chrome://marionette/content/interaction.js:182:31
+1632060867395	Marionette	INFO	Stopped listening on port 55458
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1632060894051	geckodriver	INFO	Listening on 127.0.0.1:58152
+1632060897017	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-no-remote" "-profile" "C:\\Users\\vayushi\\AppData\\Local\\Temp\\rust_mozprofilepb01z8"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/TelemetryUtils.jsm, line 167: TypeError: date is undefined
+1632060904438	Marionette	INFO	Listening on port 58161
+1632060904963	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: , line 0: NotAllowedError: The request is not allowed by the user agent or the platform in the current context, possibly because the user denied permission.
+1632060985056	Marionette	INFO	Stopped listening on port 58161
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1632061105197	geckodriver	INFO	Listening on 127.0.0.1:58251
+1632061108152	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-no-remote" "-profile" "C:\\Users\\vayushi\\AppData\\Local\\Temp\\rust_mozprofileaqY76s"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/TelemetryUtils.jsm, line 167: TypeError: date is undefined
+1632061114962	Marionette	INFO	Listening on port 58261
+1632061115049	Marionette	WARN	TLS certificate errors will be ignored for this session
+1632061241615	Marionette	INFO	Stopped listening on port 58261
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+1632061259128	geckodriver	INFO	Listening on 127.0.0.1:63673
+1632061262078	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-no-remote" "-profile" "C:\\Users\\vayushi\\AppData\\Local\\Temp\\rust_mozprofileyBmu3j"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/TelemetryUtils.jsm, line 167: TypeError: date is undefined
+1632061268726	Marionette	INFO	Listening on port 63681
+1632061268928	Marionette	WARN	TLS certificate errors will be ignored for this session
+1632061326547	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+TimedPromise/<@chrome://marionette/content/sync.js:245:13
+TimedPromise@chrome://marionette/content/sync.js:230:10
+interaction.flushEventLoop@chrome://marionette/content/interaction.js:416:10
+webdriverClickElement@chrome://marionette/content/interaction.js:182:31
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x5A000D,name=PHttpChannel::Msg_DeletingChannel) Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x5A000D,name=PHttpChannel::Msg_DeletingChannel) Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x5A000D,name=PHttpChannel::Msg_DeletingChannel) Channel closing: too late to send/recv, messages will be lost
+
+1632061338276	Marionette	INFO	Stopped listening on port 63681
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
