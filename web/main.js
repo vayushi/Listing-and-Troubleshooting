@@ -16,7 +16,7 @@ folder_path_btn.addEventListener("click", async function () {
 });
 
 function getCurrStatus(status) {
-  msgElement.innerText = status;
+  msgElement.innerText += status + "\n";
   msgElement.style.color = "green";
 }
 eel.expose(getCurrStatus, "get_curr_status");

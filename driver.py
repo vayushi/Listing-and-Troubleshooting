@@ -1,11 +1,6 @@
-import datetime
-from re import U
-from bottle import redirect
-from eel import init, expose, sleep, start
 import eel
-import tkinter
 from tkinter import filedialog
-from numpy.lib.histograms import histogram
+from tkinter import Tk
 from selenium import webdriver
 from selenium.common.exceptions import NoSuchElementException as NSEE, NoSuchWindowException
 from selenium.common.exceptions import TimeoutException as TE
@@ -13,9 +8,12 @@ from selenium.common.exceptions import NoSuchWindowException as NSWE
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-import pandas as pd
+from pandas import DataFrame
+from pandas import read_excel
 from os import path
 from win10toast import ToastNotifier
+from random import choice
+from string import ascii_lowercase
 
 home = path.expanduser('~')
 location = path.join(home, 'Downloads')
@@ -33,10 +31,7 @@ options.add_argument('start-maximized')
 options.add_argument('disable-infobars')
 options.add_argument("--disable-extensions")
 
-init('web')
-
-
-midway_btn = '//*[@id="enterprise-access-plugin-btn"]'
+eel.init('web')
 
 upload_url = "https://selection.amazon.com/home"
 midway_url = 'https://midway-auth.amazon.com/login'
@@ -44,9 +39,10 @@ midway_url = 'https://midway-auth.amazon.com/login'
 file_path = None
 upload_driver = None
 midway_auth = False
+response_list = []
 
-start_no = 88
 all_xpath = {
+    "midway_btn": '//*[@id="enterprise-access-plugin-btn"]',
     "pollaris_modal":  "//*[@id='polaris_root']/awsui-modal/div[2]/div/div/div[1]/awsui-button/button",
     "product-type":  "//*[@id='awsui-multiselect-0-dropdown-option-1']/div/awsui-checkbox/label/input",
     "UK": "//*[@id='awsui-multiselect-1-dropdown-option-1']/div/awsui-checkbox/label/input",
@@ -68,33 +64,34 @@ all_xpath = {
     "index_suppressed_dropdown_btn": "/html/body/div/div/div/awsui-app-layout/div/main/div[2]/div/div/span/section/div/awsui-wizard/div/div/awsui-form/div/div[2]/span/span/div/div/div[2]/div/div[2]/awsui-column-layout/div/span/div/div[1]/div/div/div/div/div/div/div/div/div/div/div/awsui-form-field/div/div/div/div/span/awsui-select/div/div/awsui-select-trigger/div/div",
     "index_suppressed_input": "/html/body/div/div/div/awsui-app-layout/div/main/div[2]/div/div/span/section/div/awsui-wizard/div/div/awsui-form/div/div[2]/span/span/div/div/div[2]/div/div[2]/awsui-column-layout/div/span/div/div[1]/div/div/div/div/div/div/div/div/div/div/div/awsui-form-field/div/div/div/div/span/awsui-select/div/div/awsui-select-dropdown/div/div[1]/span/awsui-select-filter/div/awsui-input/div/input",
     "index_suppressed_false_li": "/html/body/div/div/div/awsui-app-layout/div/main/div[2]/div/div/span/section/div/awsui-wizard/div/div/awsui-form/div/div[2]/span/span/div/div/div[2]/div/div[2]/awsui-column-layout/div/span/div/div[1]/div/div/div/div/div/div/div/div/div/div/div/awsui-form-field/div/div/div/div/span/awsui-select/div/div/awsui-select-dropdown/div/div[2]/ul/li",
-    "index_suppressed_next_btn": "/html/body/div/div/div/awsui-app-layout/div/main/div[2]/div/div/span/section/div/awsui-wizard/div/div/awsui-form/div/div[4]/span/div/awsui-button[3]"
+    "index_suppressed_next_btn": "/html/body/div/div/div/awsui-app-layout/div/main/div[2]/div/div/span/section/div/awsui-wizard/div/div/awsui-form/div/div[4]/span/div/awsui-button[3]",
+    "submit_contribution_btn": "/html/body/div/div/div/awsui-app-layout/div/main/div[2]/div/div/span/section/div/awsui-wizard/div/div/awsui-form/div/div[4]/span/div/awsui-button[3]"
 }
+
 mp_id = {
     "UK": 3,
     "DE": 4,
-    'FR': 3
+    'FR': 5,
+    "IT": 35691,
+    "ES": 44551
 }
 
-cookie = ''
-new_url = 'https://selection.amazon.com/item/3/B07MMWLRN7/'
 
-
-def for_single_Asin(asin, mp, id, brand):
+def for_single_Asin(asin, mp, id, brand, i):
     try:
-        print("starting one")
         mp = mp_id[mp]
         upload_url = 'https://selection.amazon.com/item/'+str(mp)+'/'+str(asin)
         global upload_driver
         upload_driver.get(upload_url)
-        sleep(10)
-        WebDriverWait(upload_driver, 60).until(
-            EC.presence_of_element_located(
-                (By.XPATH, all_xpath['pollaris_modal']))
-        )
-        # click close button on modal
-        upload_driver.find_element_by_xpath(
-            all_xpath['pollaris_modal']).click()
+        eel.sleep(10)
+        if(i == 0):
+            WebDriverWait(upload_driver, 60).until(
+                EC.presence_of_element_located(
+                    (By.XPATH, all_xpath['pollaris_modal']))
+            )
+            # click close button on modal
+            upload_driver.find_element_by_xpath(
+                all_xpath['pollaris_modal']).click()
         WebDriverWait(upload_driver, 60).until(
             EC.presence_of_element_located(
                 (By.XPATH,  all_xpath['add-attribute']))
@@ -114,7 +111,7 @@ def for_single_Asin(asin, mp, id, brand):
         )
         upload_driver.find_element_by_xpath(
             all_xpath['attribute_input']).send_keys('index_suppressed')
-        sleep(2)
+        eel.sleep(2)
         WebDriverWait(upload_driver, 10).until(
             EC.presence_of_element_located(
                 (By.XPATH,  all_xpath['attribute_search_li']))
@@ -130,7 +127,7 @@ def for_single_Asin(asin, mp, id, brand):
             all_xpath['index_suppressed_dropdown_btn']).click()
         upload_driver.find_element_by_xpath(
             all_xpath['index_suppressed_input']).send_keys('false')
-        sleep(2)
+        eel.sleep(2)
         WebDriverWait(upload_driver, 10).until(
             EC.presence_of_element_located(
                 (By.XPATH,  all_xpath['index_suppressed_false_li']))
@@ -139,32 +136,41 @@ def for_single_Asin(asin, mp, id, brand):
             all_xpath['index_suppressed_false_li']).click()
         upload_driver.find_element_by_xpath(
             all_xpath['index_suppressed_next_btn']).click()
-        return True
+        WebDriverWait(upload_driver, 10).until(
+            EC.presence_of_element_located(
+                (By.XPATH,  all_xpath['submit_contribution_btn']))
+        )
+        # upload_driver.find_element_by_xpath(all_xpath['submit_contribution_btn']).click()
+        return 'Done'
     except NSEE as e:
         print('error', e)
-        return False
+        return 'Error Occured'
 
 
 def start_task(data):
-    # print(data)
+    global response_list
     length = len(data['asin'])
-    length = 1
+    eel.get_curr_status(f'Process started')
     for i in range(0, length):
+        eel.get_curr_status(
+            f'Progress Status: {i+1} out of {length}')
         asin = data['asin'][i]
         mp = data['mp'][i]
         id = data['id'][i]
         brand = data['brand'][i]
-        response = for_single_Asin(asin, mp, id, brand)
-        if(response):
-            print('done')
+        response = for_single_Asin(asin, mp, id, brand, i)
+        response_list[i] = response
+    eel.get_curr_status(
+        f'All Asin Completed, Please Wait Generating Excel File')
+    return
 
 
 def get_mid_auth():
     try:
         global upload_driver
         global midway_auth
-        global cookie
-        print("Starting midway")
+        eel.get_curr_status(f'Starting Midway authentication')
+        new_url = 'https://selection.amazon.com/item/3/B07MMWLRN7/'
         upload_driver = webdriver.Firefox()
         upload_driver.get(new_url)
         upload_driver.maximize_window()
@@ -172,29 +178,58 @@ def get_mid_auth():
             EC.presence_of_element_located(
                 (By.XPATH, all_xpath['pollaris_modal']))
         )
-        midway_auth = True
-        return True
-
+        authStatus = True
+        msg = f'Completed Midway authentication'
     except (NSEE):
-        midway_auth = True
-        return 'Proceed'
+        authStatus = False
+        msg = f'Midway authentication Failed'
     except (TE, NSWE):
-        print("Timeout miday")
-        return 'Mideway timeout'
+        authStatus = False
+        msg = f'Midway authentication Failed, Timeout miday'
+    finally:
+        midway_auth = authStatus
+        eel.get_curr_status(msg)
+        return authStatus
 
-
-# {'asin': ['B00P2RNJ54', 'B07QJCTTN9', 'B07MMWLRN7', 'B00OKV2USU', 'B08S7SZWH8'], 'mp': ['FR', 'DE', 'UK', 'DE', 'ES'], 'id': [
-#    119898864412, 118720037412, 119882024212, 118720037412, 119805860512], 'brand': ['Puma', 'Puma', 'Puma', 'Puma', 'Puma']}
 
 def separate_filename(f_path):
-    excel_data = pd.read_excel(f_path)
+    eel.get_curr_status(f'Reading Excel file...')
+    excel_data = read_excel(f_path)
     all_data = {
         'asin': excel_data['ASIN'].to_list(),
         'mp': excel_data['MP'].to_list(),
         'id': excel_data['ID'].to_list(),
         'brand': excel_data['Brand'].to_list()
     }
+    eel.get_curr_status(f'Reading Excel file completed')
     return all_data
+
+
+def get_random_string():
+    length = 10
+    letters = ascii_lowercase
+    result_str = ''.join(choice(letters) for _ in range(length))
+    return result_str
+
+
+def export_excel_file(data):
+    try:
+        global response_list
+        if(len(response_list) == 0):
+            return
+        df = DataFrame({
+            'ASIN': data['asin'],
+            'MP': data['mp'],
+            'ID': data['id'],
+            "Brand": data['brand'],
+            "Result": response_list
+        })
+        file_name = 'Listing and TroubleShooting'
+        output_file = file_name + ' - ' + get_random_string() + '.xlsx'
+        df.to_excel(location+'/'+output_file, index=False)
+    except Exception as e:
+        print('Excel Error', e)
+        eel.get_curr_status(f'Something went wrong with excel')
 
 
 def reset():
@@ -212,42 +247,41 @@ def showNotification(msg):
                        duration=20, icon_path='icon.ico', threaded=True)
 
 
-@ expose
+@ eel.expose
 def start_driver_upload(f_path):
     global file_path
     global upload_driver
     global midway_auth
+    global response_list
     file_path = f_path
+    msg = 'Task Completed'
+    color = 'green'
     try:
         all_data = separate_filename(f_path)
         get_mid_auth()
         if(midway_auth):
+            response_list = ['Not started'] * len(all_data['asin'])
             start_task(all_data)
-            print('start')
         else:
-            # upload_driver.quit()
-            # reset()
             msg = 'Midway Authentication Failed, Try Again'
-            print(msg)
-            showNotification(msg)
-            return [msg, 'red']
+            color = 'red'
     except Exception as e:
-        # if(upload_driver is not None):
-        # upload_driver.quit()
-        # reset()
         msg = f'Something went wrong, Restart the Program and try again \n Error occured: {e}'
-        print(msg)
+        color = 'red'
+    finally:
+        export_excel_file(all_data)
+        if(upload_driver is not None):
+            upload_driver.quit()
+        reset()
         showNotification(msg)
-        return [msg, 'red']
+        return [msg, color]
+
+# start_driver_upload('C:/Users/vayushi/Desktop/Listing Correct Data.xlsx')
 
 
-start_driver_upload(
-    'C:/Users/vayushi/Desktop/Listing and Troubleshooting.xlsx')
-
-
-@ expose
+@ eel.expose
 def get_file_path():
-    root = tkinter.Tk()
+    root = Tk()
     root.withdraw()
     root.wm_attributes('-topmost', 1)
     file_path = filedialog.askopenfilename(
@@ -255,5 +289,5 @@ def get_file_path():
     return file_path
 
 
-# if __name__ == "__main__":
-#    start('index.html', size=(900, 710))
+if __name__ == "__main__":
+    eel.start('index.html', size=(900, 710))
