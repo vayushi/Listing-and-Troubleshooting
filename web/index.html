@@ -13,7 +13,7 @@
 
 <body>
 	<!-- Just an image -->
-	<nav class="navbar navbar-light bg-light">
+	<nav class="navbar navbar-light">
 		<a class="navbar-brand" href="#">
 			<img src="https://dl.dropboxusercontent.com/s/8o2mlqw2tbuomf0/Amazon-Logo.png?dl=0" width="100"
 				class="d-inline-block align-top" alt="" loading="lazy" />
@@ -23,32 +23,31 @@
 		<form id="my-form">
 			<h3 class="
             card-header
-            bg-primary
             text-white text-center
             p-3
             font-weight-bold
           ">
-				Picture Per Locale
+				Listing and Troubleshooting
 			</h3>
 			<div class="card-body">
 				<div class="form-group row">
-					<label class="col-sm-3 col-form-label">Browse Folder<span class="text-danger">*<br /><span
+					<label class="col-sm-4 col-form-label">Select Excel File<span class="text-danger">*<br /><span
 								id="folder_path_error"></span></span></label>
-					<div class="col-sm-9">
-						<button type="button" id="folder_path_btn" class="btn btn-secondary">
-							Browse
+					<div class="col-sm">
+						<button type="button" id="folder_path_btn" class="btn btn-block">
+							Click here
 						</button>
 						<span id="folder_path_val"></span>
 					</div>
 				</div>
 				<div class="form-group btn-grp">
 					<p id="msg"></p>
-					<div class="container d-flex justify-content-center">
+					<div class="container d-flex justify-content-center align-items-end">
 						<div>
-							<button class="btn btn-success m-4" id="submit_upload_btn" type="submit">
-								Start
+							<button class="submit_btn btn btn-lg pr-4 pl-4 m-4" id="submit_upload_btn" type="submit">
+								Start Process
 							</button>
-							<button class="btn btn-success" id="loading_upload" type="button" disabled
+							<button class="submit_btn btn" id="loading_upload" type="button" disabled
 								style="display: none">
 								<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
 								Processing...

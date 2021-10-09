@@ -18,18 +18,7 @@ from string import ascii_lowercase
 home = path.expanduser('~')
 location = path.join(home, 'Downloads')
 
-file = open(path.join(location, 'log_file.txt'), "a")
-
 PATH = "geckodriver.exe"
-options = webdriver.ChromeOptions()
-options.add_argument('--log-level=3')
-options.set_capability("silent", True)
-# options.add_argument("--headless")  # Runs Chrome in headless mode.
-options.add_argument('--no-sandbox')  # Bypass OS security model
-options.add_argument('--disable-gpu')  # applicable to windows os only
-options.add_argument('start-maximized')
-options.add_argument('disable-infobars')
-options.add_argument("--disable-extensions")
 
 eel.init('web')
 
@@ -44,13 +33,6 @@ response_list = []
 all_xpath = {
     "midway_btn": '//*[@id="enterprise-access-plugin-btn"]',
     "pollaris_modal":  "//*[@id='polaris_root']/awsui-modal/div[2]/div/div/div[1]/awsui-button/button",
-    "product-type":  "//*[@id='awsui-multiselect-0-dropdown-option-1']/div/awsui-checkbox/label/input",
-    "UK": "//*[@id='awsui-multiselect-1-dropdown-option-1']/div/awsui-checkbox/label/input",
-    "DE": "//*[@id='awsui-multiselect-1-dropdown-option-2']/div/awsui-checkbox/label/input",
-    "FR": "//*[@id='awsui-multiselect-1-dropdown-option-3']/div/awsui-checkbox/label/input",
-    "IT": "//*[@id='awsui-multiselect-1-dropdown-option-12']/div/awsui-checkbox/label/input",
-    "ES": "//*[@id='awsui-multiselect-1-dropdown-option-14']/div/awsui-checkbox/label/input",
-    "input_asin": "//*[@class='asin']/awsui-form-field/div/div/div/div/span/awsui-textarea/textarea",
     "add-attribute": "/html/body/div/div/div/awsui-app-layout/div/main/div[2]/div/div/span/section/section/div[2]/div/div[1]/div/div[1]/div/section[1]/div/div[2]/awsui-button/button",
     "search-btn": "/html/body/div/div/div/awsui-app-layout/div/div[1]/nav/div/span/div/awsui-form/div/div[4]/span/div[1]/awsui-button[1]/button",
     "submit_new_contribution": "/ html/body/div/div/div/awsui-app-layout/div/main/div[2]/div/div/span/section/div/awsui-wizard/div/div/awsui-form/div/div[2]/span/span/div/awsui-tabs/div/ul/li[2]/a/span/span/awsui-tooltip/span",
@@ -66,7 +48,7 @@ all_xpath = {
     "suppress_current_value_btn": "/html/body/div[2]/div/div/awsui-app-layout/div/main/div[2]/div/div/span/section/div/awsui-wizard/div/div/awsui-form/div/div[2]/span/span/div/div/div[2]/div/div[3]/div/div[2]/awsui-tooltip/span/span/button",
     "suppress_reason": "/html/body/div[2]/div/div/awsui-app-layout/div/main/div[2]/div/div/span/section/div/awsui-wizard/div/div/awsui-form/div/div[2]/span/span/div/div/div[2]/div/div[3]/div/div[2]/div/div/div[2]/div/div/div/div[2]/div[2]/div/div/awsui-form-field/div/div/div/div/span/div/awsui-input/div/input",
     "suppressed_next_btn": "/html/body/div[2]/div/div/awsui-app-layout/div/main/div[2]/div/div/span/section/div/awsui-wizard/div/div/awsui-form/div/div[4]/span/div/awsui-button[3]/button",
-    "submit_contribution_btn": "/html/body/div/div/div/awsui-app-layout/div/main/div[2]/div/div/span/section/div/awsui-wizard/div/div/awsui-form/div/div[4]/span/div/awsui-button[3]"
+    "submit_contribution_btn": "/html/body/div[2]/div/div/awsui-app-layout/div/main/div[2]/div/div/span/section/div/awsui-wizard/div/div/awsui-form/div/div[4]/span/div/awsui-button[3]/button"
 }
 
 mp_id = {
@@ -103,9 +85,11 @@ def for_single_Asin(asin, mp, id, brand, task_id, i):
             all_xpath['submit_new_contribution']).click()
         upload_driver.find_element_by_xpath(
             all_xpath['data_augmenter_id']).send_keys(id)
+        eel.sleep(2)
         upload_driver.find_element_by_xpath(all_xpath['search_icon']).click()
         upload_driver.find_element_by_xpath(
             all_xpath['attribute_dropdown_btn']).click()
+        eel.sleep(2)
         WebDriverWait(upload_driver, 10).until(
             EC.presence_of_element_located(
                 (By.XPATH,  all_xpath['attribute_input']))
@@ -119,30 +103,39 @@ def for_single_Asin(asin, mp, id, brand, task_id, i):
         )
         upload_driver.find_element_by_xpath(
             all_xpath['attribute_search_li']).click()
+        eel.sleep(2)
         upload_driver.find_element_by_xpath(all_xpath['next_btn']).click()
         WebDriverWait(upload_driver, 10).until(
             EC.presence_of_element_located(
                 (By.XPATH,  all_xpath['brand_value_input']))
         )
         upload_driver.find_element_by_xpath(
+            all_xpath['brand_value_input']).clear()
+        upload_driver.find_element_by_xpath(
             all_xpath['brand_value_input']).send_keys(brand)
+        eel.sleep(2)
         upload_driver.find_element_by_xpath(
             all_xpath['suppressed_value_drop_down']).click()
         upload_driver.find_element_by_xpath(
             all_xpath['suppress_current_value_btn']).click()
+        eel.sleep(2)
+        upload_driver.find_element_by_xpath(
+            all_xpath['suppress_reason']).clear()
         upload_driver.find_element_by_xpath(
             all_xpath['suppress_reason']).send_keys(task_id)
         eel.sleep(2)
         upload_driver.find_element_by_xpath(
             all_xpath['suppressed_next_btn']).click()
+        eel.sleep(2)
         WebDriverWait(upload_driver, 10).until(
             EC.presence_of_element_located(
                 (By.XPATH,  all_xpath['submit_contribution_btn']))
         )
-        # upload_driver.find_element_by_xpath(all_xpath['submit_contribution_btn']).click()
+        upload_driver.find_element_by_xpath(
+            all_xpath['submit_contribution_btn']).click(
+        )
         return 'Done'
-    except NSEE as e:
-        print('error', e)
+    except NSEE:
         return 'Error Occured'
 
 
@@ -169,10 +162,10 @@ def get_mid_auth():
     try:
         global upload_driver
         global midway_auth
-        eel.get_curr_status(f'Starting Midway authentication')
-        new_url = 'https://selection.amazon.com/item/3/B07MMWLRN7/'
+        eel.get_curr_status(f'Starting Program')
         upload_driver = webdriver.Firefox()
-        upload_driver.get(new_url)
+        upload_driver.get(upload_url)
+        eel.get_curr_status(f'Starting Midway authentication, Check Firefox')
         upload_driver.maximize_window()
         WebDriverWait(upload_driver, 60).until(
             EC.presence_of_element_located(
@@ -229,8 +222,7 @@ def export_excel_file(data):
         file_name = 'Listing and TroubleShooting'
         output_file = file_name + ' - ' + get_random_string() + '.xlsx'
         df.to_excel(location+'/'+output_file, index=False)
-    except Exception as e:
-        print('Excel Error', e)
+    except Exception:
         eel.get_curr_status(f'Something went wrong with excel')
 
 
@@ -238,7 +230,7 @@ def reset():
     global file_path
     global upload_driver
     global midway_auth
-    upload_driver = None
+    #upload_driver = None
     file_path = None
     midway_auth = None
 
@@ -272,13 +264,11 @@ def start_driver_upload(f_path):
         color = 'red'
     finally:
         export_excel_file(all_data)
-        if(upload_driver is not None):
-            upload_driver.quit()
+        # if(upload_driver is not None):
+        #    upload_driver.quit()
         reset()
         showNotification(msg)
         return [msg, color]
-
-# start_driver_upload('C:/Users/vayushi/Desktop/Listing Correct Data.xlsx')
 
 
 @ eel.expose
@@ -292,4 +282,4 @@ def get_file_path():
 
 
 if __name__ == "__main__":
-    eel.start('index.html', size=(900, 710))
+    eel.start('index.html', size=(600, 600))

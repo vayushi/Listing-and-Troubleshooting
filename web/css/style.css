@@ -1,37 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Righteous&display=swap");
 
-.form-card {
-  width: 90%;
-  margin-left: auto;
-  margin-right: auto;
-  box-shadow: 0px 0px 4px 1px #0000002b;
-  border: none;
-}
-
-footer {
-  display: flex;
-  margin-top: 10px;
-  justify-content: space-evenly;
-  margin-bottom: 10px;
-  align-items: flex-end;
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  left: 0;
-}
-footer span {
-  border-radius: 5px;
-  padding: 5px 20px;
-}
-
-@media only screen and (max-width: 700px) {
-  footer span {
-    padding: 2px 13px;
-    font-size: 13px;
-    text-align: center;
-    margin: 10px;
-  }
-}
 html {
   height: 100%;
   box-sizing: border-box;
@@ -55,6 +23,63 @@ body {
   position: relative;
   padding-bottom: 4rem;
   min-height: 100%;
+  background-color: #f2f2f2;
+}
+
+form {
+  background-color: #fff;
+  width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0px 0px 4px 1px #0000002b;
+  border: none;
+}
+
+.card-header {
+  background-color: #f28955;
+}
+
+#folder_path_btn {
+  background-color: #dae0e5;
+}
+
+.submit_btn {
+  color: #fff;
+  background-color: #55c165;
+}
+
+.form-card {
+  width: 100%;
+  height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+footer {
+  display: flex;
+  margin-top: 10px;
+  justify-content: space-evenly;
+  margin-bottom: 10px;
+  align-items: flex-end;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+footer span {
+  border-radius: 5px;
+  padding: 5px 20px;
+}
+
+@media only screen and (max-width: 700px) {
+  footer span {
+    padding: 2px 13px;
+    font-size: 13px;
+    text-align: center;
+    margin: 10px;
+  }
 }
 
 .btn-grp {
