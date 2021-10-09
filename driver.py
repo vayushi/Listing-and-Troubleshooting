@@ -61,10 +61,11 @@ all_xpath = {
     "attribute_input": "/html/body/div/div/div/awsui-app-layout/div/main/div[2]/div/div/span/section/div/awsui-wizard/div/div/awsui-form/div/div[2]/span/span/div/div/div/div[2]/div/div[2]/div/div/div/div/div/div/div[1]/div[2]/div/div/div[1]/input",
     "attribute_search_list": "/html/body/div/div/div/awsui-app-layout/div/main/div[2]/div/div/span/section/div/awsui-wizard/div/div/awsui-form/div/div[2]/span/span/div/div/div/div[2]/div/div[2]/div/div/div/div/div/div/div[1]/div[2]/div/div/ul",
     "attribute_search_li": "/html/body/div/div/div/awsui-app-layout/div/main/div[2]/div/div/span/section/div/awsui-wizard/div/div/awsui-form/div/div[2]/span/span/div/div/div/div[2]/div/div[2]/div/div/div/div/div/div/div[1]/div[2]/div/div/ul/li[1]",
-    "index_suppressed_dropdown_btn": "/html/body/div/div/div/awsui-app-layout/div/main/div[2]/div/div/span/section/div/awsui-wizard/div/div/awsui-form/div/div[2]/span/span/div/div/div[2]/div/div[2]/awsui-column-layout/div/span/div/div[1]/div/div/div/div/div/div/div/div/div/div/div/awsui-form-field/div/div/div/div/span/awsui-select/div/div/awsui-select-trigger/div/div",
-    "index_suppressed_input": "/html/body/div/div/div/awsui-app-layout/div/main/div[2]/div/div/span/section/div/awsui-wizard/div/div/awsui-form/div/div[2]/span/span/div/div/div[2]/div/div[2]/awsui-column-layout/div/span/div/div[1]/div/div/div/div/div/div/div/div/div/div/div/awsui-form-field/div/div/div/div/span/awsui-select/div/div/awsui-select-dropdown/div/div[1]/span/awsui-select-filter/div/awsui-input/div/input",
-    "index_suppressed_false_li": "/html/body/div/div/div/awsui-app-layout/div/main/div[2]/div/div/span/section/div/awsui-wizard/div/div/awsui-form/div/div[2]/span/span/div/div/div[2]/div/div[2]/awsui-column-layout/div/span/div/div[1]/div/div/div/div/div/div/div/div/div/div/div/awsui-form-field/div/div/div/div/span/awsui-select/div/div/awsui-select-dropdown/div/div[2]/ul/li",
-    "index_suppressed_next_btn": "/html/body/div/div/div/awsui-app-layout/div/main/div[2]/div/div/span/section/div/awsui-wizard/div/div/awsui-form/div/div[4]/span/div/awsui-button[3]",
+    "brand_value_input": "/html/body/div[2]/div/div/awsui-app-layout/div/main/div[2]/div/div/span/section/div/awsui-wizard/div/div/awsui-form/div/div[2]/span/span/div/div/div[2]/div/div[2]/awsui-column-layout/div/span/div/div[1]/div/div/div/div/div/div/div/div/div[2]/div[2]/awsui-form-field/div/div/div/div/span/div/awsui-input/div/input",
+    "suppressed_value_drop_down": "/html/body/div[2]/div/div/awsui-app-layout/div/main/div[2]/div/div/span/section/div/awsui-wizard/div/div/awsui-form/div/div[2]/span/span/div/div/div[2]/div/div[3]/div/div",
+    "suppress_current_value_btn": "/html/body/div[2]/div/div/awsui-app-layout/div/main/div[2]/div/div/span/section/div/awsui-wizard/div/div/awsui-form/div/div[2]/span/span/div/div/div[2]/div/div[3]/div/div[2]/awsui-tooltip/span/span/button",
+    "suppress_reason": "/html/body/div[2]/div/div/awsui-app-layout/div/main/div[2]/div/div/span/section/div/awsui-wizard/div/div/awsui-form/div/div[2]/span/span/div/div/div[2]/div/div[3]/div/div[2]/div/div/div[2]/div/div/div/div[2]/div[2]/div/div/awsui-form-field/div/div/div/div/span/div/awsui-input/div/input",
+    "suppressed_next_btn": "/html/body/div[2]/div/div/awsui-app-layout/div/main/div[2]/div/div/span/section/div/awsui-wizard/div/div/awsui-form/div/div[4]/span/div/awsui-button[3]/button",
     "submit_contribution_btn": "/html/body/div/div/div/awsui-app-layout/div/main/div[2]/div/div/span/section/div/awsui-wizard/div/div/awsui-form/div/div[4]/span/div/awsui-button[3]"
 }
 
@@ -77,7 +78,7 @@ mp_id = {
 }
 
 
-def for_single_Asin(asin, mp, id, brand, i):
+def for_single_Asin(asin, mp, id, brand, task_id, i):
     try:
         mp = mp_id[mp]
         upload_url = 'https://selection.amazon.com/item/'+str(mp)+'/'+str(asin)
@@ -110,7 +111,7 @@ def for_single_Asin(asin, mp, id, brand, i):
                 (By.XPATH,  all_xpath['attribute_input']))
         )
         upload_driver.find_element_by_xpath(
-            all_xpath['attribute_input']).send_keys('index_suppressed')
+            all_xpath['attribute_input']).send_keys('brand')
         eel.sleep(2)
         WebDriverWait(upload_driver, 10).until(
             EC.presence_of_element_located(
@@ -121,21 +122,19 @@ def for_single_Asin(asin, mp, id, brand, i):
         upload_driver.find_element_by_xpath(all_xpath['next_btn']).click()
         WebDriverWait(upload_driver, 10).until(
             EC.presence_of_element_located(
-                (By.XPATH,  all_xpath['index_suppressed_dropdown_btn']))
+                (By.XPATH,  all_xpath['brand_value_input']))
         )
         upload_driver.find_element_by_xpath(
-            all_xpath['index_suppressed_dropdown_btn']).click()
+            all_xpath['brand_value_input']).send_keys(brand)
         upload_driver.find_element_by_xpath(
-            all_xpath['index_suppressed_input']).send_keys('false')
+            all_xpath['suppressed_value_drop_down']).click()
+        upload_driver.find_element_by_xpath(
+            all_xpath['suppress_current_value_btn']).click()
+        upload_driver.find_element_by_xpath(
+            all_xpath['suppress_reason']).send_keys(task_id)
         eel.sleep(2)
-        WebDriverWait(upload_driver, 10).until(
-            EC.presence_of_element_located(
-                (By.XPATH,  all_xpath['index_suppressed_false_li']))
-        )
         upload_driver.find_element_by_xpath(
-            all_xpath['index_suppressed_false_li']).click()
-        upload_driver.find_element_by_xpath(
-            all_xpath['index_suppressed_next_btn']).click()
+            all_xpath['suppressed_next_btn']).click()
         WebDriverWait(upload_driver, 10).until(
             EC.presence_of_element_located(
                 (By.XPATH,  all_xpath['submit_contribution_btn']))
@@ -158,7 +157,8 @@ def start_task(data):
         mp = data['mp'][i]
         id = data['id'][i]
         brand = data['brand'][i]
-        response = for_single_Asin(asin, mp, id, brand, i)
+        task_id = data['task_id'][i]
+        response = for_single_Asin(asin, mp, id, brand, task_id, i)
         response_list[i] = response
     eel.get_curr_status(
         f'All Asin Completed, Please Wait Generating Excel File')
@@ -199,7 +199,8 @@ def separate_filename(f_path):
         'asin': excel_data['ASIN'].to_list(),
         'mp': excel_data['MP'].to_list(),
         'id': excel_data['ID'].to_list(),
-        'brand': excel_data['Brand'].to_list()
+        'brand': excel_data['Brand'].to_list(),
+        "task_id": excel_data['Task_ID'].to_list()
     }
     eel.get_curr_status(f'Reading Excel file completed')
     return all_data
@@ -222,6 +223,7 @@ def export_excel_file(data):
             'MP': data['mp'],
             'ID': data['id'],
             "Brand": data['brand'],
+            "Task_ID": data['task_id'],
             "Result": response_list
         })
         file_name = 'Listing and TroubleShooting'
