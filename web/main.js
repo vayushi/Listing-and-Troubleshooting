@@ -16,8 +16,10 @@ folder_path_btn.addEventListener("click", async function () {
 });
 
 function getCurrStatus(status) {
-  msgElement.innerText += status + "\n";
-  msgElement.style.color = "green";
+  var p = document.createElement("span");
+  p.innerHTML = status + "<br>";
+  p.style.color = "grey";
+  msgElement.append(p);
 }
 eel.expose(getCurrStatus, "get_curr_status");
 
@@ -35,9 +37,11 @@ uploadBtn.addEventListener("click", function generateData(e) {
 });
 
 function viewMessage(msg) {
+  var p = document.createElement("span");
+  p.innerHTML = msg[0] + "<br>";
+  p.style.color = msg[1];
+  msgElement.append(p);
   folder_path_val.innerText = "";
-  msgElement.innerText = msg[0];
-  msgElement.style.color = msg[1];
   loadingButtonUpload.style.display = "none";
   uploadBtn.style.display = "block";
 }
