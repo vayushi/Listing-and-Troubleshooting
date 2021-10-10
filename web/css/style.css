@@ -37,6 +37,7 @@ form {
 
 #msg {
   max-height: 200px;
+  overflow-y: scroll;
 }
 .card-header {
   background-color: #f28955;

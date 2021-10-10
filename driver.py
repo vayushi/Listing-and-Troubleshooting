@@ -152,7 +152,7 @@ def for_single_Asin(asin, mp, id, brand, task_id, i):
                 all_xpath['suppress_reason']).clear()
             upload_driver.find_element_by_xpath(
                 all_xpath['suppress_reason']).send_keys(task_id)
-            log(+ "Entering task id")
+            log("Entering task id")
             eel.sleep(2)
         upload_driver.find_element_by_xpath(
             all_xpath['suppressed_next_btn']).click()
@@ -187,9 +187,9 @@ def start_task(data):
     result_list = []
     desc_list = []
     for i in range(0, length):
-        eel.get_curr_status(
-            f'Progress Status: {i+1} out of {length}')
-        log(f'Progress Status: {i+1} out of {length}')
+        a = f'Progress Status: {i+1} out of {length}'
+        eel.get_curr_status(a)
+        log(a)
         asin = data['asin'][i]
         mp = data['mp'][i]
         id = data['id'][i]
@@ -213,6 +213,8 @@ def get_mid_auth():
     try:
         global upload_driver
         global midway_auth
+        authStatus = True
+        msg = f'Completed Midway authentication'
         eel.get_curr_status(f'Starting Firefox Driver')
         log("Starting driver")
         upload_driver = webdriver.Firefox()
@@ -224,8 +226,6 @@ def get_mid_auth():
             EC.presence_of_element_located(
                 (By.XPATH, all_xpath['pollaris_modal']))
         )
-        authStatus = True
-        msg = f'Completed Midway authentication'
     except NSEE as e:
         log("NSEE as" + e)
         authStatus = False
@@ -241,7 +241,7 @@ def get_mid_auth():
     finally:
         midway_auth = authStatus
         eel.get_curr_status(msg)
-        log("Midway Status" + midway_auth)
+        log("Midway Status" + str(midway_auth))
         return authStatus
 
 
@@ -328,7 +328,7 @@ def start_driver_upload(f_path):
         msg = f'Something went wrong, Restart the Program and try again \n Error occured: {e}'
         color = 'red'
     finally:
-        log("Error occurred" + e)
+        log(msg)
         export_excel_file(all_data)
         reset()
         showNotification(msg)
