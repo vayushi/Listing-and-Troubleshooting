@@ -67,7 +67,7 @@ mp_id = {
 
 
 def log(data):
-    if is_log == True:
+    if is_log:
         log_file.write(">> " + str(datetime.now()) + " >> " + str(data) + "\n")
 
 
@@ -78,11 +78,11 @@ def for_single_Asin(asin, mp, id, brand, task_id, i):
         log("Open URL" + upload_url)
         global upload_driver
         upload_driver.get(upload_url)
-        eel.sleep(10)
+        eel.sleep(5)
         if(i == 0):
-            eel.sleep(5)
+            eel.sleep(3)
             log("Finding Modal")
-            WebDriverWait(upload_driver, 60).until(
+            WebDriverWait(upload_driver, 40).until(
                 EC.presence_of_element_located(
                     (By.XPATH, all_xpath['pollaris_modal']))
             )
@@ -91,7 +91,7 @@ def for_single_Asin(asin, mp, id, brand, task_id, i):
                 all_xpath['pollaris_modal']).click()
             log("Closed Modal")
         log("Finding Add Attribute")
-        WebDriverWait(upload_driver, 60).until(
+        WebDriverWait(upload_driver, 30).until(
             EC.presence_of_element_located(
                 (By.XPATH,  all_xpath['add-attribute']))
         )
@@ -104,61 +104,51 @@ def for_single_Asin(asin, mp, id, brand, task_id, i):
         upload_driver.find_element_by_xpath(
             all_xpath['data_augmenter_id']).send_keys(id)
         log("Added Augmented id")
-        eel.sleep(2)
+        eel.sleep(1)
         upload_driver.find_element_by_xpath(all_xpath['search_icon']).click()
         log("Search icon")
         upload_driver.find_element_by_xpath(
             all_xpath['attribute_dropdown_btn']).click()
-        eel.sleep(2)
-        WebDriverWait(upload_driver, 10).until(
+        eel.sleep(1)
+        WebDriverWait(upload_driver, 3).until(
             EC.presence_of_element_located(
                 (By.XPATH,  all_xpath['attribute_input']))
         )
         upload_driver.find_element_by_xpath(
             all_xpath['attribute_input']).send_keys('brand')
         log("Choosing brand value")
-        eel.sleep(2)
-        WebDriverWait(upload_driver, 10).until(
+        eel.sleep(1)
+        WebDriverWait(upload_driver, 3).until(
             EC.presence_of_element_located(
                 (By.XPATH,  all_xpath['attribute_search_li']))
         )
         upload_driver.find_element_by_xpath(
             all_xpath['attribute_search_li']).click()
-        eel.sleep(2)
+        eel.sleep(1)
         upload_driver.find_element_by_xpath(all_xpath['next_btn']).click()
-        WebDriverWait(upload_driver, 10).until(
+        WebDriverWait(upload_driver, 3).until(
             EC.presence_of_element_located(
                 (By.XPATH,  all_xpath['brand_value_input']))
         )
         upload_driver.find_element_by_xpath(
-            all_xpath['brand_value_input']).clear()
-        upload_driver.find_element_by_xpath(
             all_xpath['brand_value_input']).send_keys(brand)
         log("Entering brand value")
-        eel.sleep(2)
+        eel.sleep(1)
         upload_driver.find_element_by_xpath(
             all_xpath['suppressed_value_drop_down']).click()
-        eel.sleep(2)
-        try:
-            upload_driver.find_element_by_xpath(
-                all_xpath['suppress_remove_btn'])
-            log("Suprress already present")
-        except NSEE:
-            upload_driver.find_element_by_xpath(
-                all_xpath['suppress_current_value_btn']).click()
-            log("New supress value")
-        finally:
-            upload_driver.find_element_by_xpath(
-                all_xpath['suppress_reason']).clear()
-            upload_driver.find_element_by_xpath(
-                all_xpath['suppress_reason']).send_keys(task_id)
-            log("Entering task id")
-            eel.sleep(2)
+        eel.sleep(1)
+        upload_driver.find_element_by_xpath(
+            all_xpath['suppress_current_value_btn']).click()
+        log("New supress value")
+        upload_driver.find_element_by_xpath(
+            all_xpath['suppress_reason']).send_keys(task_id)
+        log("Entering task id")
+        eel.sleep(1)
         upload_driver.find_element_by_xpath(
             all_xpath['suppressed_next_btn']).click()
         log("Supress next button clicked")
-        eel.sleep(2)
-        WebDriverWait(upload_driver, 10).until(
+        eel.sleep(1)
+        WebDriverWait(upload_driver, 3).until(
             EC.presence_of_element_located(
                 (By.XPATH,  all_xpath['submit_contribution_btn']))
         )
@@ -166,7 +156,7 @@ def for_single_Asin(asin, mp, id, brand, task_id, i):
             all_xpath['submit_contribution_btn']).click(
         )
         log("Submit contribution button clicked")
-        eel.sleep(2)
+        eel.sleep(1)
         msg_header = upload_driver.find_element_by_xpath(
             all_xpath['message_header_span']).text
         msg_desc = upload_driver.find_element_by_xpath(
@@ -174,7 +164,7 @@ def for_single_Asin(asin, mp, id, brand, task_id, i):
         log("Final Response \n" + "Done \n" + msg_header + msg_desc)
         return ['Done', msg_header, msg_desc]
     except NSEE as e:
-        log("NSEE as" + e)
+        log("NSEE as " + e.msg)
         return ['Error Occured', '', '']
 
 
@@ -227,15 +217,15 @@ def get_mid_auth():
                 (By.XPATH, all_xpath['pollaris_modal']))
         )
     except NSEE as e:
-        log("NSEE as" + e)
+        log("NSEE as " + e.msg)
         authStatus = False
         msg = f'Midway authentication Failed'
     except TE as e:
-        log("TE as" + e)
+        log("TE as " + e.msg)
         authStatus = False
         msg = f'Midway authentication Failed, Timeout miday'
     except NSWE as e:
-        log("NSWE as" + e)
+        log("NSWE as " + e.msg)
         authStatus = False
         msg = f'Midway authentication Failed, Timeout miday'
     finally:
@@ -288,18 +278,21 @@ def export_excel_file(data):
         log("Generating Excel file")
     except Exception as e:
         eel.get_curr_status(f'Something went wrong with excel')
-        log("Error while generating excel as "+e)
+        log("Error while generating excel as" + e)
 
 
 def reset():
     global file_path
     global upload_driver
     global midway_auth
+    global response_list
     if(upload_driver is not None):
         upload_driver.quit()
+    log_file.close()
     upload_driver = None
     file_path = None
-    midway_auth = None
+    midway_auth = False
+    response_list = {'result': [], 'header': [], 'desc': []}
 
 
 def showNotification(msg):
@@ -328,8 +321,8 @@ def start_driver_upload(f_path):
         msg = f'Something went wrong, Restart the Program and try again \n Error occured: {e}'
         color = 'red'
     finally:
-        log(msg)
         export_excel_file(all_data)
+        log(msg)
         reset()
         showNotification(msg)
         return [msg, color]
@@ -347,7 +340,7 @@ def get_file_path():
 
 
 if __name__ == "__main__":
-    if log_file == True:
+    if is_log:
         log_file.write("\n \n \n \n>>>>>>>>>>> Starting Program at " +
                        str(datetime.now()) + " >>>>>>>> \n \n")
     eel.start('index.html', size=(600, 600))
