@@ -1,3 +1,4 @@
 chromedriver.exe
 geckodriver.exe
 geckodriver.log
+__pycache__/
